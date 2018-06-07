@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>这是我的乐淘首页</title>
+    <!-- 引入站点图标 -->
+    <link rel="icon" href="images/favicon.ico">
+    <!-- 引入MUI的css包 -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <!-- 引入字体图标 -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <!-- 引入自己的样式 -->
+    <link rel="stylesheet/less" href="less/index.less">
+    <!-- less编译器 -->
+    <script src="./lib/less/less.js"></script>
+</head>
+<body>
+    <!-- header -->
+    <header id="header">
+        <h4>乐淘云购</h4>
+        <a class="fa fa-search" aria-hidden="true"></a> 
+    </header>
+    <!-- lunbo部分 -->
+    <section id="carousel">
+        <div class="mui-slider">
+            <div class="mui-slider-group mui-slider-loop">
+              <!--支持循环，需要重复图片节点-->
+              <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="images/banner9.png" /></a></div>
+              <div class="mui-slider-item"><a href="#"><img src="images/banner1.png"/></a></div>
+              <div class="mui-slider-item"><a href="#"><img src="images/banner2.png"/></a></div>
+              <div class="mui-slider-item"><a href="#"><img src="images/banner3.png"/></a></div>
+              <div class="mui-slider-item"><a href="#"><img src="images/banner4.png"/></a></div>
+              <div class="mui-slider-item"><a href="#"><img src="images/banner5.png"/></a></div>
+              <div class="mui-slider-item"><a href="#"><img src="images/banner6.png"/></a></div>
+              <div class="mui-slider-item"><a href="#"><img src="images/banner7.png"/></a></div>
+              <div class="mui-slider-item"><a href="#"><img src="images/banner8.jpg"/></a></div>
+              <div class="mui-slider-item"><a href="#"><img src="images/banner9.png"/></a></div>
+              <!--支持循环，需要重复图片节点-->
+              <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="images/banner1.png" /></a></div>
+            </div>
+            <div class="mui-slider-indicator">
+                <div class="mui-indicator mui-active"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- 导航栏 -->
+    <nav id="nav"></nav>
+    <!-- banner -->
+    <section id="banner"></section>
+    <!-- 品牌 -->
+    <section id="brand"></section>
+    <!-- sport -->
+    <section id="sport"></section>
+    <!-- 女士 -->
+    <section id="women"></section>
+    <!-- 男士 -->
+    <section id="man"></section>
+    <!-- footer -->
+    <footer id="footer"></footer>
+
+    <!-- mui的js -->
+    <script src="./lib/mui/js/mui.js"></script>
+    <!-- 引入zepto 提供了jq中的一些功能 -->
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <!-- 模板引擎 -->
+    <script src="./lib/artTemplate/template.js"></script>
+    <!-- 引入自己的js -->
+    <script src="./js/index.js"></script>
+</body>
+</html>
