@@ -1,11 +1,13 @@
 @import "base.less";
-body {
+html,body {
     background-color: #ccc;
     width:100%;
+    height: 100%;
 }
 
 .main {
     display: flex;
+    height: 100%;
     .leftbar{
         width: 80px;
         ul {
@@ -30,12 +32,11 @@ body {
     .rightbar {
         flex: 1;
         background-color: #ccc;
-        padding: 10px;
+        position: relative;
         .mui-scroll-wrapper {
-            position: relative;
-            width: 100%;
-            height: 101%;
-            .mui-scroll {
+            .mui-scroll { 
+                padding: 10px;
+                min-height: 101%;
                 //padding要设置给main的父盒子
                 >.mui-row {
                     background-color: #fff;
