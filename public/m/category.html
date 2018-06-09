@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 引入站点图标 -->
+    <link rel="icon" href="images/favicon.ico">
+    <!-- mui框架 -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <!-- 字体图标 -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.min.css">
+    <!-- 引入自己less -->
+    <link rel="stylesheet/less" href="./less/category.less">
+    <!-- less编译器 -->
+    <script src="./lib/less/less.js"></script>
+</head>
+
+<body>
+    <!-- header -->
+    <header id="header">
+        <h4>乐淘云购</h4>
+        <a class="fa fa-search" aria-hidden="true"></a>
+    </header>
+    <div class="main">
+        <div class="leftbar">
+            <ul>
+                <li>
+                    <a href="">运动馆</a>
+                </li>
+                <li>
+                    <a href="">运动馆</a>
+                </li>
+                <li>
+                    <a href="">运动馆</a>
+                </li>
+                <li>
+                    <a href="">运动馆</a>
+                </li>
+                <li>
+                    <a href="">运动馆</a>
+                </li>
+                <li>
+                    <a href="">运动馆</a>
+                </li>
+            </ul>
+        </div>
+        <!-- 右边盒子里面的内容滚动 -->
+        <div class="rightbar">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <div class="mui-row">
+                        <div class="mui-col-xs-4">
+                            <a href="">
+                                <img src="./images/brand1.png" alt="">
+                                <p>耐克</p>
+                            </a>
+                        </div>
+                        <div class="mui-col-xs-4">
+                            <a href="">
+                                <img src="./images/brand1.png" alt="">
+                                <p>耐克</p>
+                            </a>
+                        </div>
+                        <div class="mui-col-xs-4">
+                            <a href="">
+                                <img src="./images/brand1.png" alt="">
+                                <p>耐克</p>
+                            </a>
+                        </div>
+                        <div class="mui-col-xs-4">
+                            <a href="">
+                                <img src="./images/brand1.png" alt="">
+                                <p>耐克</p>
+                            </a>
+                        </div>
+                        <div class="mui-col-xs-4">
+                            <a href="">
+                                <img src="./images/brand1.png" alt="">
+                                <p>耐克</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer id="footer">
+        <div class="mui-row">
+            <div class="mui-col-xs-3">
+                <a href="index.html" class="tab_cate fa fa-bars">
+                    <p>首页</p>
+                </a>
+            </div>
+            <div class="mui-col-xs-3 ">
+                <a href="category.html" class="active tab_home fa fa-home now">
+                    <p class="active">分类</p>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="" class="tab_cart fa fa-shopping-cart">
+                    <p>购物车</p>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="" class="tab_user fa fa-user">
+                    <p>会员中心</p>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 引入mui的JS -->
+    <script src="./lib/mui/js/mui.js"></script>
+    <!--引入zepto  -->
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <!-- 模板引擎 -->
+    <script src="./lib/artTemplate/template.js"></script>
+    <!-- 引入自己的js -->
+    <script src="./js/category.js"></script>
+    <script type="text/html" id="leftData">
+        {{each rows  }}
+        <li class="{{$index == 0? "active" : "" }}">
+            <a href="#" data-id="{{$value.id}}">{{$value.categoryName}}</a>
+        </li>
+        {{/each}}
+    </script>
+
+    <script type="text/html" id="getdata">
+        {{each rows}}
+        <div class="mui-col-xs-4">
+            <a href="#">
+                <img src="{{$value.brandLogo}}" alt="">
+                <p>{{$value.brandName}}</p>
+            </a>
+        </div>
+        {{/each}}
+
+    </script>
+</body>
+
+</html>

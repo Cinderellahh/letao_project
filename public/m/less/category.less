@@ -1,0 +1,58 @@
+@import "base.less";
+body {
+    background-color: #ccc;
+    width:100%;
+}
+
+.main {
+    display: flex;
+    .leftbar{
+        width: 80px;
+        ul {
+            background-color: #fff;
+            li{
+                padding: 0 10px;
+                height: 45px;
+                 &.active {
+                    background-color: #ccc;
+                    }
+                a {
+                display: block;
+                height: 45px;
+                line-height: 45px;
+                width: 100%;
+                color: #000;
+               
+                } 
+            }
+        }
+    }  
+    .rightbar {
+        flex: 1;
+        background-color: #ccc;
+        padding: 10px;
+        .mui-scroll-wrapper {
+            position: relative;
+            width: 100%;
+            height: 101%;
+            .mui-scroll {
+                //padding要设置给main的父盒子
+                >.mui-row {
+                    background-color: #fff;
+                    >div{
+                        a {
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            text-align: center;
+                            img {
+                                width: 100%;
+                            }                           
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
