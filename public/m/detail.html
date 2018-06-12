@@ -23,13 +23,52 @@
     <header id="header">
         <a href="#" class="icon_back fa fa-arrow-left"></a>
         <h4>商品详情</h4>
-        <a href="#" class="fa icon_home fa fa-home home"></a>
+        <a href="index.html" class="fa icon_home fa fa-home home"></a>
     </header>
 
-    <!-- 给外层包一层 因为main是有50 的padding-->
     <div class="main">
-
+        <!--这里放置真实显示的DOM内容-->
+        <!-- lunbo部分 -->
+        <section id="carousel">
+            <div class="mui-slider">
+                <div class="mui-slider-group mui-slider-loop">
+                  <!-- 轮播图 -->
+                
+                </div>
+                <div class="mui-slider-indicator">
+                   <!-- 小圆点 -->
+                </div>
+            </div>
+        </section>
+        <!-- 产品详情 -->
+        <section id="product-detail">
+            <div class="title">
+                名称：
+                <span>李宁闪击篮球鞋驭帅10镭射队尚4男韦德之道空袭中高帮队尚3.5球鞋</span>
+            </div>
+            <div class="product-price">
+                价格:
+                <span class="new-price">$500</span>
+                <del class="old-price">$500</del>
+            </div>
+            <div class="product-size">
+                尺码:
+              
+            </div>
+            <div class="pruduct-num">
+                数量:
+                <div class="mui-numbox" data-numbox-step='1' data-numbox-min='0' data-numbox-max='100'>
+                    <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                    <input class="mui-numbox-input" type="number" />
+                    <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+                </div>
+                <span>剩余:
+                    <span>20件</span>
+                </span>
+            </div>
+        </section>
     </div>
+
     <!-- footer -->
     <footer id="footer">
         <a href="" class="btn_cart fa fa-shopping-cart"></a>
@@ -39,8 +78,67 @@
         </div>
     </footer>
 
+    <!-- 轮播图的模板引擎 -->
+    <script type="text/html" id="detailcarousel">
+        <div class="mui-slider-group mui-slider-loop">
+            {{each pic as value i}}
+            <!--支持循环，需要重复图片节点-->
+            {{if i==0}}
+                <div class="mui-slider-item mui-slider-item-duplicate">
+                    <a href="#">
+                        <img src="{{pic[pic.length-1].picAddr}}"/>
+                    </a>
+                </div>
+            {{/if}}
+            <div class="mui-slider-item">
+                <a href="#">
+                    <img src="{{value.picAddr}}"/>
+                </a>
+            </div>
+            {{if i==pic.length-1}}
+            <div class="mui-slider-item">
+                <a href="#">
+                    <img src="{{pic[0].picAddr}}"/>
+                </a>
+            </div>
+        {{/if}}
+            {{/each}}
+        </div>
+        <div class="mui-slider-indicator">
+            {{each pic as value i}}
+            <div class="mui-indicator {{i==0?'avtive':''}}"></div>
+            {{/each}}
+        </div>
+    </script>
 
-
+    <script type="text/html" id="productcontent">      
+        <div class="title">
+                名称：
+                <span>{{proName}}</span>
+            </div>
+            <div class="product-price">
+                价格:
+                <span class="new-price">${{oldPrice}}</span>
+                <del class="old-price">${{price}}</del>
+            </div>
+            <div class="product-size">
+                尺码:
+                {{each data as value i}}
+                <span class="btn-size" data-size="{{value}}">{{value}}</span>
+                {{/each}}
+            </div>
+            <div class="pruduct-num">
+                数量:
+                <div class="mui-numbox" data-numbox-step='1' data-numbox-min='0' data-numbox-max='{{num}}'>
+                    <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                    <input class="mui-numbox-input" type="number" />
+                    <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+                </div>
+                <span>剩余:
+                    <span>{{num}}</span>
+                </span>
+            </div>              
+    </script>
 
     <!-- mui的js -->
     <script src="./lib/mui/js/mui.js"></script>

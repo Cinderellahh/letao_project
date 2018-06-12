@@ -1,5 +1,56 @@
 @import "base.less";
 
+
+.main{
+
+    #carousel {   
+        .mui-slider-indicator {      
+            bottom:40px;      
+        }
+    } 
+    #product-detail {
+        >div {
+            border-bottom: 1px solid #ccc;
+        }
+        .title {
+            font-size: 18px;
+            padding: 15px 5px;
+        }  
+        .product-price {
+            padding: 15px 5px;
+            .new-price {
+                font-size: 20px;
+                color: red;
+                font-weight: 600;
+            }
+            .old-price {
+                color: #666;
+                font-size: 14px; 
+            }
+        }
+        .product-size {
+            padding: 15px 5px;
+            .btn-size {
+                display: inline-block;
+                font-size: 14px;
+                padding: 5px;
+                border: 1px solid #666;
+                margin-bottom: 10px;
+                &.active {
+                    background-color: orange;
+                }
+            }
+        }
+        .pruduct-num {
+            padding: 15px 5px;
+            font-size: 14px;
+        }
+    }
+}
+
+
+
+
 #footer {
     background-color: #ccc;
     display: flex;

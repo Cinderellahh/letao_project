@@ -68,7 +68,7 @@ Letao.prototype = {
             letao.queryHistory();
 
             //11.点击搜索按钮跳转页面
-            window.location.href = "product.html";
+            window.location.href = "product.html?search="+text;
 
         })
     },
