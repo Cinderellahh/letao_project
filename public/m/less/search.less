@@ -1,0 +1,40 @@
+@import "base.less";
+
+.main {  
+        .search-history {
+            padding: 5px 13px;
+            .search-top {             
+                color: #666;
+                height: 25px;
+                line-height: 14px;
+                font-size: 14px;                 
+                .search-left {
+                    float: left;
+                }
+                .search-right {
+                    float: right;    
+                }
+            }
+            .search-detail {
+                >ul {
+                    list-style: none;
+                    border: 1px solid #ccc;
+                    li {
+                        border-bottom: 1px solid #ccc;
+                        padding: 5px 15px;
+                        &:last-child {
+                            border-bottom: none;
+                        }
+                        a {
+                            font-size: 14px;
+                           
+                        }
+                        .chacha {
+                            float: right;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }

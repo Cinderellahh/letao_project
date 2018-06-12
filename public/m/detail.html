@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 引入站点图标 -->
+    <link rel="icon" href="images/favicon.ico">
+    <!-- 引入MUI的css包 -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <!-- 引入字体图标 -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <!-- 引入自己的样式 -->
+    <link rel="stylesheet/less" href="less/detail.less">
+    <!-- less编译器 -->
+    <script src="./lib/less/less.js"></script>
+</head>
+
+<body>
+    <!-- header -->
+    <header id="header">
+        <a href="#" class="icon_back fa fa-arrow-left"></a>
+        <h4>商品详情</h4>
+        <a href="#" class="fa icon_home fa fa-home home"></a>
+    </header>
+
+    <!-- 给外层包一层 因为main是有50 的padding-->
+    <div class="main">
+
+    </div>
+    <!-- footer -->
+    <footer id="footer">
+        <a href="" class="btn_cart fa fa-shopping-cart"></a>
+        <div class="option">
+            <a href="#" class="mui-btn mui-btn-danger add-cart">加入购物车</a>
+            <a href="#" class="mui-btn mui-btn-warning add-buy">立即购买</a>
+        </div>
+    </footer>
+
+
+
+
+    <!-- mui的js -->
+    <script src="./lib/mui/js/mui.js"></script>
+    <!-- 引入zepto 提供了jq中的一些功能 -->
+    <script src="lib/zepto/zepto.min.js"></script>
+    <!-- 模板引擎 -->
+    <script src="./lib/artTemplate/template.js"></script>
+    <!-- 引入自己的js -->
+    <script src="./js/detail.js"></script>
+</body>
+
+</html>

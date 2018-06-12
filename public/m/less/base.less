@@ -11,6 +11,7 @@
    padding: 50px 0; 
 }
 
+
 // 头部
 #header {
     width: 100%;
@@ -26,7 +27,7 @@
         line-height: 50px;
         text-align: center;
     }
-    .fa-search {
+    .fa-search,.home {
         font-size: 18px;
         position: absolute;
         top:15px;
@@ -51,11 +52,36 @@
     
 }
 
+// 搜索框的样式
+.searchbar {
+    position: relative;
+    .search-form {
+        padding: 10px 60px 10px 10px;
+        .search-input {
+            margin-bottom: 0;
+            height: 35px;
+            border: 1px solid @mainColor;
+            border-radius: 5px 0 0 5px;           
+        }
+    } 
+        .search-button {
+            position: absolute;
+            line-height:34px;
+            width: 50px;
+            top: 10px;
+            right:10px;
+            background-color: @mainColor;
+            border-radius: 0px 5px 5px 0px;
+            border-color: @mainColor;
+            text-align: center;
+        }
+    }
+
+
 // 底部
 #footer {
     background-color: @mainColor;
     height: 50px;
-    // line-height: 50px;
     text-align: center;
     margin-top: 5px;
     position: fixed;
@@ -86,3 +112,43 @@
         }
     }
  }
+
+.content {
+    .mui-row{            
+        >li {
+            list-style: none;
+            margin-bottom: 10px;               
+            padding: 5px;
+            a {
+                display: block;
+                // 阴影设置给a,设置给装所有内容的盒子,设置padding之后盒子外层变小了就会有间隙
+                box-shadow: 0 0 5px #666;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                padding-bottom: 8px;
+                img {
+                    width: 100%;
+                }  
+                p {             
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                }
+                .price {
+                    span{
+                        color:orange;
+                    }
+                    del {
+                        color:#666;
+                    }
+                }
+                button {
+                    background-color: @mainColor;        
+                }
+            }
+        }
+    }
+}

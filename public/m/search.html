@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>这是我的乐淘首页</title>
+    <!-- 引入站点图标 -->
+    <link rel="icon" href="images/favicon.ico">
+    <!-- 引入MUI的css包 -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <!-- 引入字体图标 -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <!-- 引入自己的样式 -->
+    <link rel="stylesheet/less" href="less/search.less">
+    <!-- less编译器 -->
+    <script src="./lib/less/less.js"></script>
+</head>
+
+<body>
+    <!-- header -->
+    <header id="header">
+        <a href="#" class="icon_back fa fa-arrow-left"></a>
+        <h4>搜索中心</h4>
+    </header>
+
+    <div class="main">
+        <div class="searchbar">
+            <form action="" class="search-form">
+                <input type="text" class="search-input" placeholder="请输入你要搜索的商品">
+            </form>
+            <a href="#" class="search-button btn mui-btn-primary">搜索</a>
+        </div>
+
+        <div class="search-history">
+            <div class="search-top">
+                <span class="search-left">搜索历史</span>
+                <span class="search-right fa fa-trash-o">清除历史</span>
+            </div>
+
+            <div class="mui-clearfix search-detail">
+               
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <footer id="footer">
+        <div class="mui-row">
+            <div class="mui-col-xs-3 ">
+                <a href="index.html" class="active tab_home fa fa-home now">
+                    <p class="active">首页</p>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="category.html" class="tab_cate fa fa-bars">
+                    <p>分类</p>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="" class="tab_cart fa fa-shopping-cart">
+                    <p>购物车</p>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="" class="tab_user fa fa-user">
+                    <p>会员中心</p>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- 模板 -->
+    <script type="text/html" id="searchData">
+        <!-- 如果rows有长度,也就是渲染的数据有长度就渲染页面 -->
+        {{if rows.length}}
+        <ul>
+            {{each rows as value i}}
+            <li>
+                <a href="product.html">{{value.search}}</a>
+                <span class="fa fa-times chacha" data-id="{{value.id}}"></span>
+            </li>
+            {{/each}}
+        </ul>
+        {{/if}}
+    </script>
+
+    <!-- mui的js -->
+    <script src="./lib/mui/js/mui.js"></script>
+    <!-- 引入zepto 提供了jq中的一些功能 -->
+    <script src="lib/zepto/zepto.min.js"></script>
+    <!-- 模板引擎 -->
+    <script src="./lib/artTemplate/template.js"></script>
+    <!-- 引入自己的js -->
+    <script src="./js/search.js"></script>
+</body>
+
+</html>

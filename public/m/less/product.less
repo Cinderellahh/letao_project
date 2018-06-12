@@ -1,0 +1,29 @@
+@import "base.less";
+
+html,body {
+    height: 100%;
+}
+// 给html,body,main ,container 都要设置高,由于main还是要放在最外层
+.main {
+    height: 100%;
+    .container {
+        position: relative;
+        height: 100%;
+        .productlist {
+            .product-rank {
+                background-color: #ddd;
+                line-height: 30px;
+                margin-bottom: 10px;
+                text-align: center;
+                >div {
+                    >div {
+                        a {
+                            color:#666;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
