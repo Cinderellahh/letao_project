@@ -64,19 +64,20 @@ var letao;
                         callback :function(){
                         //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
                         setTimeout(function(){
-                            //下拉刷新再次请求数据
+                            //上拉刷新再次请求数据
                             letao.getProductList({
                                 proName:search,
-                                page:++page
-                               
+                                page:++page                              
                             },function(backData){
                                 var html=template('getProduct',backData);
+                                // 上拉的时候是append
                                 $('.content .mui-row').append(html);
-                                //上拉                             
+                                //上拉判断是否还有数据,如果有数据就还可以继续加载                             
                                 if(backData.data.length>0){
                                     mui('.mui-scroll-wrapper').pullRefresh().endPullupToRefresh();
 
                                 }else{
+                                    //如果没有数据了就提示没有更多的数据了
                                     mui('.mui-scroll-wrapper').pullRefresh().endPullupToRefresh(true);
 
                                 }
@@ -90,7 +91,7 @@ var letao;
               })
             },
 
-            //搜索商品列表
+            //公共搜索商品列表
             searchProductList:function(){
                 //给搜索按钮设置一个点击事件
                 $('.search-button').on('tap',function(){
@@ -101,6 +102,7 @@ var letao;
                         proName:search
                         // page:1
                     },function(backData){
+                        //公共的搜索出来的数据渲染页面
                         var  html =template('getProduct',backData);
                         $('.content .mui-row').html(html);
                     });
@@ -137,27 +139,34 @@ var letao;
                    //给a设置两个属性,并动态获取
                    var sorttype =$(this).data('sort-type');
                    console.log(sorttype);
+                   //获取排序的自定义属性的值
                    var sort =$(this).data('sort');
                    console.log(sort);
                    //if判断身上的sort
                     if(sort==1){
+                        //如果是1的话改成2
                         sort=2
                     }else{
+                        //如果是2就改成1 
                         sort=1
                     }
 
-                    //设置sort
+                    //每次点击一下就修改一下这个排序的自定义属性的值
                     $(this).attr('data-sort',sort);
+                    //判断点击是哪个按钮并执行相应的代码
                     if(sorttype=='price'){
+                        //如果是price的话就传递price和搜索的值
                         letao.getProductList({
                             proName:search,
                             price:sort
                         },function(backData){
+                            //回调函数中渲染页面
                             var html=template('getProduct',backData);
                             $('.content .mui-row').html(html);
                         })
-
+                        //如果是num就传递搜索的值和num值
                     }else if(sorttype=='num'){
+                        //传递之后在回调函数中渲染页面
                         letao.getProductList({
                             proName:search,
                             num:sort
@@ -167,16 +176,9 @@ var letao;
                         })
                     }
                })
-            },
-
-            
-        
+            },                
         }
-        // $('button.addbuy').on('tap',function(){
-        //     var id=$(this).data('id');
-        //     console.log(id);
-        //     window.location.href="detail.html?id="+id;
-        // })
+        //这个是获取url中的值得方法
         //获取url地址栏的参数的函数 网上找的  name就是url参数名
         function getQueryString(name) {
             var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
