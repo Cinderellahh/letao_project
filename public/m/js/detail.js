@@ -1,4 +1,5 @@
 var letao;
+var id;
 $(function(){
     letao=new Letao();
     // 轮播的调用
@@ -6,7 +7,7 @@ $(function(){
     //加入购物车调用
     letao.addCart();
     //获取URL中的值
-    var id=getQueryString('id');  
+    id=getQueryString('id');  
     //调用获取商品详情的方法并传递一个id值
     letao.getProductDetail(id);
 })
@@ -90,15 +91,27 @@ Letao.prototype={
                 mui.toast('请选择数量!',{ duration:'short', type:'div' }) 
                 return;
             }
+            //发送数据请求加入购物车
+            $.ajax({
+                url:"/cart/addCart",
+                data:{'productId':id,'num':num,'size':size},
+                type:'post',
+                success:function(backData){
+                    if(backData.success){
+                        mui.confirm( '添加成功， 是否去购物车查看？','温馨提示', ['是','否'], function(e){
+                            // 回调函数可以传递参数 e  e.index == 0 表示点击了左边的是 为1 表示点击了右边的否
+                            if(e.index == 0){
+                              window.location.href='shoppingcart.html';
+                            }else if(e.index == 1){
+                                console.log('请继续选择尺码数量');
+                            }
+                        });
+                    }else{
+                       window.location.href="login.html";
+                    }
+                }
+            })
 
-            mui.confirm( '添加成功， 是否去购物车查看？','温馨提示', ['是','否'], function(e){
-            	// 回调函数可以传递参数 e  e.index == 0 表示点击了左边的是 为1 表示点击了右边的否
-            	if(e.index == 0){
-            		console.log('正在进入购物车');
-            	}else if(e.index == 1){
-            		console.log('请继续选择尺码数量');
-            	}
-            });
           })
       }
 

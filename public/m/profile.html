@@ -13,7 +13,7 @@
     <!-- 字体图标 -->
     <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.min.css">
     <!-- 引入自己less -->
-    <link rel="stylesheet/less" href="./less/category.less">
+    <link rel="stylesheet/less" href="./less/profile.less">
     <!-- less编译器 -->
     <script src="./lib/less/less.js"></script>
 </head>
@@ -22,29 +22,34 @@
     <!-- header -->
     <header id="header">
         <a href="#" class="icon_back fa fa-arrow-left"></a>
-        <form action="" class="formdata">
-            <input type="search" class="searchbar" placeholder="请输入你需要的商品">
-        </form>
-        <a href="search.html" class="fa fa-search" aria-hidden="true"></a>
+        <h4>个人中心</h4>
     </header>
+
     <div class="main">
-        <div class="leftbar">
-            <ul>
-               
-            </ul>
-        </div>
-        <!-- 右边盒子里面的内容滚动 -->
-        <div class="rightbar">
-            <div class="mui-scroll-wrapper">
-                <div class="mui-scroll">
-                    <div class="mui-row">
-                       
+        <ul>
+            <li class="mui-table-view-cell mui-media">
+                <a href="javascript:;"class="mui-navigate-right">
+                    <img class="mui-media-object mui-pull-left" src="./images/user.jpg">
+                    <div class="media-body mui-pull-left">
+                        <span class="username">用户名</span>
+                        <p class="mobile"><span>绑定的手机</span></p>
                     </div>
-                </div>
-            </div>
+                </a>
+            </li>
+            <li>
+                <a href="" class="safe mui-navigate-right">账户与安全</a>
+            </li>
+            <li>
+                <a href="" class="mycart mui-navigate-right">我的购物车</a>
+            </li>
+            <li>
+                <a href="" class="location mui-navigate-right">收货地址管理</a>
+            </li>
+        </ul>
+        <div class="login-out">
+            <a href="" class="login-button">退出登录</a>
         </div>
     </div>
-
     <!-- footer -->
     <footer id="footer">
         <div class="mui-row">
@@ -54,18 +59,18 @@
                 </a>
             </div>
             <div class="mui-col-xs-3 ">
-                <a href="category.html" class="active tab_home fa fa-home now">
-                    <p class="active">分类</p>
+                <a href="category.html" class="tab_home fa fa-home now">
+                    <p>分类</p>
                 </a>
             </div>
             <div class="mui-col-xs-3">
-                <a href="shoppingcart.html" class="tab_cart fa fa-shopping-cart">
+                <a href="shoppingcart.html" class=" tab_cart fa fa-shopping-cart">
                     <p>购物车</p>
                 </a>
             </div>
             <div class="mui-col-xs-3">
-                <a href="profile.html" class="tab_user fa fa-user">
-                    <p>会员中心</p>
+                <a href="" class="active tab_user fa fa-user">
+                    <p class="active">会员中心</p>
                 </a>
             </div>
         </div>
@@ -78,27 +83,9 @@
     <!-- 模板引擎 -->
     <script src="./lib/artTemplate/template.js"></script>
     <!-- 引入自己的js -->
-    <script src="./js/category.js"></script>
-    
-    <script type="text/html" id="leftData">
-        {{each rows}}
-        <li class="{{$index == 0? "active" : "" }}">
-            <a href="#" data-id="{{$value.id}}">{{$value.categoryName}}</a>
-        </li>
-        {{/each}}
-    </script>
+    <script src="./js/base.js"></script>
+    <script src="./js/profile.js"></script>
 
-    <script type="text/html" id="getdata">
-        {{each rows}}
-        <div class="mui-col-xs-4">
-            <a href="#">
-                <img src="{{$value.brandLogo}}" alt="">
-                <p>{{$value.brandName}}</p>
-            </a>
-        </div>
-        {{/each}}
-
-    </script>
 </body>
 
 </html>
